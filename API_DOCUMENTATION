@@ -1,0 +1,76 @@
+MENTOR AND STUDENT ASSIGNING DATABASE
+
+1. WRITE API TO CREATE MENTOR
+
+REQUEST URL - https://mentorandstudentassign.onrender.com/mentor/create
+
+- SAMPLE BODY:
+- {
+  "mentorName":"Jackie Chan" ,
+  "subject":"FSD" ,
+  "studentsList":[] ,
+  "Batch":"B48CTV" }
+
+2. WRITE API TO CREATE STUDENT
+
+- URL - https://mentorandstudentassign.onrender.com/student/create
+- BODY:
+- { "studentName":"Sir" ,
+  "subject": "Data Science",
+  "mentorName":"Doremon" ,
+  "Batch":"B50HTV" ,
+  "mentorId": "64ca9a9132e845f09d4ff81d"
+  }
+
+3. ASSIGN STUDENT TO MENTOR
+
+- REQUEST URL - https://mentorandstudentassign.onrender.com/mentor/assign-student
+- SAMPLE BODY:
+-     {
+       "_id": "64ca9f9e7553a8aceca4740f",
+           "mentorName": "Rajan",
+           "subject": "Business Analyst",
+           "studentsList": [
+               1,2
+           ],
+           "Batch": "B60VCT",
+           "__v": 0
+       }
+
+4. ASSIGN MENTOR TO STUDENT
+
+- REQUEST URL - https://mentorandstudentassign.onrender.com/student/assign-mentor
+- SAMPLE BODY DATA:
+- {
+  "\_id": "64ca9dc4713aa6eb8dc8ff0c",
+  "studentName": "Gyan",
+  "subject": "Data Science",
+  "mentorName": "Doremon",
+  "Batch": "B50HTV",
+  "mentorId": "64ca9fc97553a8aceca47411",
+  "\_\_v": 0,
+  "previousMentorName": ""
+
+              }
+
+      5.FETCH ALL STUDENT DETAILS FOR A PARTICULAR MENTOR
+
+  /\*\*
+
+- METHOD - GET
+- REQUEST - PARAMS<MENTORID>
+- RESPONSE - OBJECT<MENTOR WITH STUDENT DETAILS>
+- REQUEST URL PARTICULAR MENTOR - https://mentorandstudentassign.onrender.com/mentor/64ca9f9e7553a8aceca4740f
+-
+- "**\***FOR GET ALL MENTOR\*\*\*
+- REQUEST URL - https://mentorandstudentassign.onrender.com/mentor/
+
+6.  FETCH PREVIUOUSLY ASSIGNED MENTOR DETAILS WITH GET METHOD WITH STUDENT ID AS PARAMS
+    /\*\*
+
+- METHOD - GET
+- REQUEST - STUDENT OBJECTID AS PARAMS
+- RESPONSE - OBJECT<STUDENT WITH PREVIOUS MENTOR>
+- PRODUCTION REQUEST URL - https://mentorandstudentassign.onrender.com/student/64ca9c9b713aa6eb8dc8fef2
+- **_FOR GET ALL STUDENTS_**
+- REQUEST URL - https://mentorandstudentassign.onrender.com/student/
