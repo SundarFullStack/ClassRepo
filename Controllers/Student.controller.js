@@ -129,7 +129,7 @@ StudentRouter.patch("/assign-mentor", (request, response, next) => {
  * REQUEST - STUDENT OBJECTID AS PARAMS
  * RESPONSE - OBJECT<STUDENT WITH PREVIOUS MENTOR>
  * REQUEST URL - http://localhost:5000/student/64ca9c9b713aa6eb8dc8fef2
- * 
+ *
  ***FOR GET ALL STUDENTS***
  * REQUEST URL - http://localhost:5000/student/
  */
@@ -162,7 +162,6 @@ StudentRouter.get("/:studentId", (request, response, next) => {
       }
     });
 });
-
 
 //FETCH ALL STUDENTS
 /**
