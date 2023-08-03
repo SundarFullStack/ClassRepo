@@ -61,6 +61,12 @@ StudentRouter.get("/wo-mentor", (request, response, next) => {
           message: "STUDENTS FETCHED SUCCESSFULLY",
           Data: result,
         });
+      } else {
+        return response.status(200).json({
+          success: true,
+          message: "NO STUDENTS WITHOUT MENTOR!!!",
+          Data: result,
+        });
       }
     })
     .catch((error) => {
@@ -136,6 +142,7 @@ StudentRouter.patch("/assign-mentor", (request, response, next) => {
 
 StudentRouter.get("/:studentId", (request, response, next) => {
   const { studentId } = request.params;
+  // console.log(studentId);
 
   StudentModel.find(
     {
@@ -145,6 +152,7 @@ StudentRouter.get("/:studentId", (request, response, next) => {
   )
     .then((result) => {
       if (result) {
+        // console.log(result);
         return response.status(200).json({
           success: true,
           message: "STUDENT FETCHED SUCCESSFULLY",
